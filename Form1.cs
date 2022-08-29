@@ -37,6 +37,7 @@ namespace Biblioteka
 {
     public partial class FLibrary : Form
     {
+        User currentUser;//объявляем пользователя в виде интерфейса, потом назначим как один из классов
         public FLibrary()
         {
             InitializeComponent();
@@ -45,11 +46,63 @@ namespace Biblioteka
         private void BLogin_Click(object sender, EventArgs e)
         {
             //кнопка логина. Проверяет наличие файла пользователя и сравнивает пароль
+            String username = TBLogin.Text;
+            String pass = TBPassword.Text;
+            String papka;
+            if (RBLoginLibrarian.Checked) papka = "\\Librarians\\";
+            else papka = "\\Readers\\";
+            String file = papka + "\\" + username + ".txt";
+            if (File.Exists(file)) //если файл этого пользователя есть 
+            {
+                using (FileStream fileStream = new FileStream(file, FileMode.Open)) //читаем файл
+                {
+                    StreamReader streamReader = new StreamReader(fileStream);
+                    String parolfile = streamReader.ReadLine(); //читаем первую строку
+                    if (pass.Equals(parolfile))// если введенный пароль эквивалентен прочитанному из файла
+                    {
+                        if (RBLoginLibrarian.Checked) Authorization(true, file); // входим как сотрудник
+                        else Authorization(false, file); // входим как читатель
+                    }
+
+                }
+            }
+            else { }//всплывающее окно, что такой пользователь не найден 
+        }
+
+        private void Authorization(bool Librarian, String file)
+        {
+            if (Librarian)
+            {
+                //здесь нужно удалять вкладки читателя, но непонятно как
+                //загружаем данные сотрудника
+                currentUser = new Librarian(file);
+            }
+            else
+            {
+                //здесь нужно удалять вкладки сотрудника
+            }
+
         }
 
         private void BRegister_Click(object sender, EventArgs e)
         {
             //кнопка регистрации. Создает файл пользователя и заполняет его
+            String papka;
+            if (RBRegLibrarian.Checked)
+            {
+                currentUser = new Librarian(TBRegLogin.Text,
+                    TBRegPassword.Text,
+                    TBRegLastName.Text,
+                    TBRegName.Text,
+                    TBRegMidName.Text,
+                    DTPRegBirthday.Value,
+                    TBRegTelNum.Text);
+                currentUser.SaveInFile();
+
+            }
+            else papka = "\\Readers\\";
+
+
         }
 
         private void BPickBookReader_Click(object sender, EventArgs e)

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.TLogin = new System.Windows.Forms.TabPage();
+            this.TPLogin = new System.Windows.Forms.TabPage();
             this.BLogin = new System.Windows.Forms.Button();
             this.RBLoginLibrarian = new System.Windows.Forms.RadioButton();
             this.RBLoginReader = new System.Windows.Forms.RadioButton();
@@ -38,6 +38,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.TRegister = new System.Windows.Forms.TabPage();
+            this.RBRegLibrarian = new System.Windows.Forms.RadioButton();
+            this.RBRegReader = new System.Windows.Forms.RadioButton();
             this.BRegister = new System.Windows.Forms.Button();
             this.DTPRegBirthday = new System.Windows.Forms.DateTimePicker();
             this.TBRegTelNum = new System.Windows.Forms.TextBox();
@@ -118,10 +120,8 @@
             this.button8 = new System.Windows.Forms.Button();
             this.BAddREader = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.RBRegLibrarian = new System.Windows.Forms.RadioButton();
-            this.RBRegReader = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
-            this.TLogin.SuspendLayout();
+            this.TPLogin.SuspendLayout();
             this.TRegister.SuspendLayout();
             this.TListBook.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -136,7 +136,7 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.TLogin);
+            this.tabControl1.Controls.Add(this.TPLogin);
             this.tabControl1.Controls.Add(this.TRegister);
             this.tabControl1.Controls.Add(this.TListBook);
             this.tabControl1.Controls.Add(this.TBookWork);
@@ -148,22 +148,22 @@
             this.tabControl1.Size = new System.Drawing.Size(800, 450);
             this.tabControl1.TabIndex = 0;
             // 
-            // TLogin
+            // TPLogin
             // 
-            this.TLogin.Controls.Add(this.BLogin);
-            this.TLogin.Controls.Add(this.RBLoginLibrarian);
-            this.TLogin.Controls.Add(this.RBLoginReader);
-            this.TLogin.Controls.Add(this.TBPassword);
-            this.TLogin.Controls.Add(this.TBLogin);
-            this.TLogin.Controls.Add(this.label2);
-            this.TLogin.Controls.Add(this.label1);
-            this.TLogin.Location = new System.Drawing.Point(4, 24);
-            this.TLogin.Name = "TLogin";
-            this.TLogin.Padding = new System.Windows.Forms.Padding(3);
-            this.TLogin.Size = new System.Drawing.Size(792, 422);
-            this.TLogin.TabIndex = 0;
-            this.TLogin.Text = "Вход";
-            this.TLogin.UseVisualStyleBackColor = true;
+            this.TPLogin.Controls.Add(this.BLogin);
+            this.TPLogin.Controls.Add(this.RBLoginLibrarian);
+            this.TPLogin.Controls.Add(this.RBLoginReader);
+            this.TPLogin.Controls.Add(this.TBPassword);
+            this.TPLogin.Controls.Add(this.TBLogin);
+            this.TPLogin.Controls.Add(this.label2);
+            this.TPLogin.Controls.Add(this.label1);
+            this.TPLogin.Location = new System.Drawing.Point(4, 24);
+            this.TPLogin.Name = "TPLogin";
+            this.TPLogin.Padding = new System.Windows.Forms.Padding(3);
+            this.TPLogin.Size = new System.Drawing.Size(792, 422);
+            this.TPLogin.TabIndex = 0;
+            this.TPLogin.Text = "Вход";
+            this.TPLogin.UseVisualStyleBackColor = true;
             // 
             // BLogin
             // 
@@ -255,6 +255,28 @@
             this.TRegister.TabIndex = 1;
             this.TRegister.Text = "Регистрация";
             this.TRegister.UseVisualStyleBackColor = true;
+            // 
+            // RBRegLibrarian
+            // 
+            this.RBRegLibrarian.AutoSize = true;
+            this.RBRegLibrarian.Location = new System.Drawing.Point(406, 309);
+            this.RBRegLibrarian.Name = "RBRegLibrarian";
+            this.RBRegLibrarian.Size = new System.Drawing.Size(84, 19);
+            this.RBRegLibrarian.TabIndex = 17;
+            this.RBRegLibrarian.TabStop = true;
+            this.RBRegLibrarian.Text = "Сотрудник";
+            this.RBRegLibrarian.UseVisualStyleBackColor = true;
+            // 
+            // RBRegReader
+            // 
+            this.RBRegReader.AutoSize = true;
+            this.RBRegReader.Location = new System.Drawing.Point(289, 309);
+            this.RBRegReader.Name = "RBRegReader";
+            this.RBRegReader.Size = new System.Drawing.Size(75, 19);
+            this.RBRegReader.TabIndex = 16;
+            this.RBRegReader.TabStop = true;
+            this.RBRegReader.Text = "Читатель";
+            this.RBRegReader.UseVisualStyleBackColor = true;
             // 
             // BRegister
             // 
@@ -1010,28 +1032,6 @@
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
-            // RBRegLibrarian
-            // 
-            this.RBRegLibrarian.AutoSize = true;
-            this.RBRegLibrarian.Location = new System.Drawing.Point(406, 309);
-            this.RBRegLibrarian.Name = "RBRegLibrarian";
-            this.RBRegLibrarian.Size = new System.Drawing.Size(84, 19);
-            this.RBRegLibrarian.TabIndex = 17;
-            this.RBRegLibrarian.TabStop = true;
-            this.RBRegLibrarian.Text = "Сотрудник";
-            this.RBRegLibrarian.UseVisualStyleBackColor = true;
-            // 
-            // RBRegReader
-            // 
-            this.RBRegReader.AutoSize = true;
-            this.RBRegReader.Location = new System.Drawing.Point(289, 309);
-            this.RBRegReader.Name = "RBRegReader";
-            this.RBRegReader.Size = new System.Drawing.Size(75, 19);
-            this.RBRegReader.TabIndex = 16;
-            this.RBRegReader.TabStop = true;
-            this.RBRegReader.Text = "Читатель";
-            this.RBRegReader.UseVisualStyleBackColor = true;
-            // 
             // FLibrary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1041,8 +1041,8 @@
             this.Name = "FLibrary";
             this.Text = "Библиотека";
             this.tabControl1.ResumeLayout(false);
-            this.TLogin.ResumeLayout(false);
-            this.TLogin.PerformLayout();
+            this.TPLogin.ResumeLayout(false);
+            this.TPLogin.PerformLayout();
             this.TRegister.ResumeLayout(false);
             this.TRegister.PerformLayout();
             this.TListBook.ResumeLayout(false);
@@ -1067,7 +1067,7 @@
         #endregion
 
         private TabControl tabControl1;
-        private TabPage TLogin;
+        private TabPage TPLogin;
         private TabPage TRegister;
         private RadioButton RBLoginLibrarian;
         private RadioButton RBLoginReader;
