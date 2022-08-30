@@ -38,6 +38,7 @@ namespace Biblioteka
     public partial class FLibrary : Form
     {
         User currentUser;//объявляем пользователя в виде интерфейса, потом назначим как один из классов
+        Book currentBook;//текущая книга
         public FLibrary()
         {
             InitializeComponent();
@@ -58,15 +59,17 @@ namespace Biblioteka
                 {
                     StreamReader streamReader = new StreamReader(fileStream);
                     String parolfile = streamReader.ReadLine(); //читаем первую строку
+                    streamReader.Close();
                     if (pass.Equals(parolfile))// если введенный пароль эквивалентен прочитанному из файла
                     {
                         if (RBLoginLibrarian.Checked) Authorization(true, file); // входим как сотрудник
                         else Authorization(false, file); // входим как читатель
-                    }
+                    }                   
 
                 }
             }
             else { }//всплывающее окно, что такой пользователь не найден 
+            
         }
 
         private void Authorization(bool Librarian, String file)
@@ -76,6 +79,7 @@ namespace Biblioteka
                 //здесь нужно удалять вкладки читателя, но непонятно как
                 //загружаем данные сотрудника
                 currentUser = new Librarian(file);
+                this.Text = "Библиотека: сотрудник " + currentUser.GetFIO();
             }
             else
             {
@@ -130,6 +134,12 @@ namespace Biblioteka
         private void BAddBook_Click(object sender, EventArgs e)
         {
             //Добавляет файл книги
+            currentBook = new Book(Convert.ToInt32(TBCodeBookLibrarian.Text),
+                    TBNameBookLibrarian.Text,
+                    TBAuthorBookLibrarian.Text,
+                    RTBCommentBookLibrarian.Text
+                    );
+            currentBook.SaveInFile();
         }
 
         private void BEditBook_Click(object sender, EventArgs e)

@@ -9,5 +9,6 @@ namespace Biblioteka
     internal interface User //интерфейс, от которого будут унаследованы читатель и библиотекарь
     {
         public void SaveInFile();
+        public string GetFIO();
     }
 }

@@ -77,5 +77,10 @@ namespace Biblioteka
                 streamWriter.Close();
             }
         }
+        public string GetFIO()
+        {
+           string FIO = this.lastName + " " + this.firstName + " " + this.middleName;
+            return FIO; 
+        }
     }
 }

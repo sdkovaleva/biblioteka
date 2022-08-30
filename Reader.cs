@@ -22,5 +22,9 @@ namespace Biblioteka
         {
 
         }
+        public string GetFIO()
+        {
+            return "";
+        }
     }
 }
