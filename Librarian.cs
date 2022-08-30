@@ -58,7 +58,7 @@ namespace Biblioteka
             this.birthday = birthday;
             this.tel = tel;
         }
-        public void SaveInFile()
+        public void SaveInFile()//сохранение информации о сотруднике в файл 
         {
             string file = "\\Librarians\\" + this.login + ".txt";
             using (FileStream fileStream = new FileStream(file, FileMode.Create))

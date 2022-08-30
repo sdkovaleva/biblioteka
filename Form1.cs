@@ -37,11 +37,13 @@ namespace Biblioteka
 {
     public partial class FLibrary : Form
     {
-        User currentUser;//объ€вл€ем пользовател€ в виде интерфейса, потом назначим как один из классов
+        Librarian currentLibrarian;//объ€вл€ем текущего сотрудника 
+        Reader currentReader;//объ€вл€ем текущего пользовател€ 
         Book currentBook;//текуща€ книга
         public FLibrary()
         {
             InitializeComponent();
+            UpdateReaders();
         }
 
         private void BLogin_Click(object sender, EventArgs e)
@@ -64,12 +66,12 @@ namespace Biblioteka
                     {
                         if (RBLoginLibrarian.Checked) Authorization(true, file); // входим как сотрудник
                         else Authorization(false, file); // входим как читатель
-                    }                   
+                    }
 
                 }
             }
             else { }//всплывающее окно, что такой пользователь не найден 
-            
+
         }
 
         private void Authorization(bool Librarian, String file)
@@ -78,8 +80,8 @@ namespace Biblioteka
             {
                 //здесь нужно удал€ть вкладки читател€, но непон€тно как
                 //загружаем данные сотрудника
-                currentUser = new Librarian(file);
-                this.Text = "Ѕиблиотека: сотрудник " + currentUser.GetFIO();
+                currentLibrarian = new Librarian(file);
+                this.Text = "Ѕиблиотека: сотрудник " + currentLibrarian.GetFIO();
             }
             else
             {
@@ -94,14 +96,14 @@ namespace Biblioteka
             String papka;
             if (RBRegLibrarian.Checked)
             {
-                currentUser = new Librarian(TBRegLogin.Text,
+                currentLibrarian = new Librarian(TBRegLogin.Text,
                     TBRegPassword.Text,
                     TBRegLastName.Text,
                     TBRegName.Text,
                     TBRegMidName.Text,
                     DTPRegBirthday.Value,
                     TBRegTelNum.Text);
-                currentUser.SaveInFile();
+                currentLibrarian.SaveInFile();
 
             }
             else papka = "\\Readers\\";
@@ -138,8 +140,9 @@ namespace Biblioteka
                     TBNameBookLibrarian.Text,
                     TBAuthorBookLibrarian.Text,
                     RTBCommentBookLibrarian.Text
-                    );
-            currentBook.SaveInFile();
+                    ); //конструктор объекта книг ис введенными данными
+            currentBook.SaveInFile(); // сохран€ем в файл
+            //обновл€ем список книг
         }
 
         private void BEditBook_Click(object sender, EventArgs e)
@@ -155,6 +158,14 @@ namespace Biblioteka
         private void BAddREader_Click(object sender, EventArgs e)
         {
             //ƒобавл€ет читател€ с указанными данными
+            currentReader = new Reader(TBLRLogin.Text,
+                TBLRPassword.Text,
+                TBLRLastName.Text,
+                TBLRName.Text,
+                TBLRMidName.Text,
+                DTPLRBirthday.Value,
+                TBLRTelNum.Text);
+            currentReader.SaveInFile();
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -166,5 +177,27 @@ namespace Biblioteka
         {
             //”дал€ет файл указанного читател€
         }
+
+        public void UpdateReaders()
+        {
+            //функци€ заполени€ списка читателей
+            string papka = "\\Readers\\";
+            //https://docs.microsoft.com/ru-ru/dotnet/api/system.io.directory.getfiles?view=net-6.0 про список файлов
+            string[] fileEntries = Directory.GetFiles(papka);
+            foreach (string fileName in fileEntries)
+            {
+                LBReaderList.Items.Add(fileName);
+            }
+        }
+        /*
+        private void LBReaderList_Click(object sender, EventArgs e)
+        {
+            
+            String file = LBReaderList.SelectedItem.ToString(); // берем текст выбранного пункта
+            //открываем файл
+            //помещаем данные из файла в пол€ 
+            
+        }
+        */
     }
 }
