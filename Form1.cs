@@ -163,13 +163,19 @@ namespace Biblioteka
 
         private void BRentBook_Click(object sender, EventArgs e)
         {
-            //Кнопка выдачи книги. почти тоже самое что взятие книги, только еще читателя надо указать
+            //Кнопка выдачи книги. почти тоже самое что взятие книги, только еще читателя надо указать на вкладке с чителями
+            currentBook.SetReder(currentReader.GetFIO());
+            currentReader.AddBookInHands(currentBook.GetbookName() + " " + currentBook.GetbookAuthor());
+            currentReader.SaveInFile();
+            currentBook.SaveInFile();
         }
 
         private void BReturnBook_Click(object sender, EventArgs e)
         {
-            //Кнопка возврата книги. Если была на руках - обнулить книге и читателю отметки о ее взятии
+            //Кнопка возврата книги. Обнулить книге что она у кого то на руках и читателю отметки о ее взятии
+            currentBook.SetReder("");
             //Дописать ее в список прочитанных книг читателя
+            currentReader.AddBookReads(currentBook.GetbookName() + " " + currentBook.GetbookAuthor());
         }
 
         private void BAddBook_Click(object sender, EventArgs e)
