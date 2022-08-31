@@ -77,6 +77,10 @@ namespace Biblioteka
                 streamWriter.Close();
             }
         }
+        public void DeleteFileUser()
+        {
+            //
+        }
         public string GetFIO()
         {
            string FIO = this.lastName + " " + this.firstName + " " + this.middleName;

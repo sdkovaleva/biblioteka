@@ -95,7 +95,7 @@
             this.TReaderWork = new System.Windows.Forms.TabPage();
             this.label29 = new System.Windows.Forms.Label();
             this.LBRedersBooksRetrieved = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TBReaderTicket = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.LBRedersBooks = new System.Windows.Forms.ListBox();
@@ -767,7 +767,7 @@
             // 
             this.TReaderWork.Controls.Add(this.label29);
             this.TReaderWork.Controls.Add(this.LBRedersBooksRetrieved);
-            this.TReaderWork.Controls.Add(this.textBox1);
+            this.TReaderWork.Controls.Add(this.TBReaderTicket);
             this.TReaderWork.Controls.Add(this.label28);
             this.TReaderWork.Controls.Add(this.label27);
             this.TReaderWork.Controls.Add(this.LBRedersBooks);
@@ -815,12 +815,12 @@
             this.LBRedersBooksRetrieved.Size = new System.Drawing.Size(219, 154);
             this.LBRedersBooksRetrieved.TabIndex = 63;
             // 
-            // textBox1
+            // TBReaderTicket
             // 
-            this.textBox1.Location = new System.Drawing.Point(593, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 23);
-            this.textBox1.TabIndex = 62;
+            this.TBReaderTicket.Location = new System.Drawing.Point(593, 4);
+            this.TBReaderTicket.Name = "TBReaderTicket";
+            this.TBReaderTicket.Size = new System.Drawing.Size(194, 23);
+            this.TBReaderTicket.TabIndex = 62;
             // 
             // label28
             // 
@@ -982,6 +982,7 @@
             this.LBReaderList.Name = "LBReaderList";
             this.LBReaderList.Size = new System.Drawing.Size(323, 347);
             this.LBReaderList.TabIndex = 17;
+            this.LBReaderList.Click += new System.EventHandler(this.LBReaderList_Click);
             // 
             // groupBox6
             // 
@@ -1154,7 +1155,7 @@
         private Label label26;
         private Label label29;
         private ListBox LBRedersBooksRetrieved;
-        private TextBox textBox1;
+        private TextBox TBReaderTicket;
         private Label label28;
         private RadioButton RBRegLibrarian;
         private RadioButton RBRegReader;

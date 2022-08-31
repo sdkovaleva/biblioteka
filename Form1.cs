@@ -171,11 +171,24 @@ namespace Biblioteka
         private void button10_Click(object sender, EventArgs e)
         {
             //«аписывает заново указанного читател€
+            //currentReader.Set - здесь записываем заново все пол€ текущего читател€
+            currentReader.SetTicketNumber(Convert.ToInt16( TBReaderTicket.Text));
+            currentReader.SetLogin(TBLRLogin.Text);
+            currentReader.SetPassword(TBLRPassword.Text);
+            currentReader.SetlastName(TBLRLastName.Text);
+            currentReader.SetfirstName(TBLRName.Text);
+            currentReader.SetMiddleName(TBLRMidName.Text);
+            currentReader.SetBirthday(DTPLRBirthday.Value);
+            currentReader.SetTel(TBLRTelNum.Text);
+            
+            currentReader.SaveInFile();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             //”дал€ет файл указанного читател€
+            currentReader.DeleteFileUser();
+            UpdateReaders();
         }
 
         public void UpdateReaders()
@@ -189,15 +202,34 @@ namespace Biblioteka
                 LBReaderList.Items.Add(fileName);
             }
         }
-        /*
+
         private void LBReaderList_Click(object sender, EventArgs e)
         {
-            
             String file = LBReaderList.SelectedItem.ToString(); // берем текст выбранного пункта
-            //открываем файл
-            //помещаем данные из файла в пол€ 
-            
+            currentReader = new Reader(file);                   //открываем файл
+            TBReaderTicket.Text = Convert.ToString(currentReader.GetTicketNumber()); //помещаем данные из файла в пол€ 
+            TBLRLogin.Text = currentReader.GetLogin();
+            TBLRPassword.Text = currentReader.GetPassword();
+            TBLRName.Text = currentReader.GetfirstName();
+            TBLRLastName.Text = currentReader.GetlastName();
+            TBLRMidName.Text = currentReader.GetMiddleName();   
+            DTPLRBirthday.Value = currentReader.GetBirthday();
+            TBLRTelNum.Text = currentReader.GetTel();
+            List<string> booksInHands = currentReader.GetbooksInHands();
+            int kolvo = booksInHands.Count(); //количество книг на руках
+            for (int i = 0; i < kolvo; i++)
+            {
+                LBRedersBooks.Items.Add(booksInHands[i]);
+            }
+            List<string> booksRead = currentReader.GetbooksRead();
+            kolvo = booksRead.Count(); //количество книг прочитанных
+            for (int i = 0; i < kolvo; i++)
+            {
+                LBRedersBooksRetrieved.Items.Add(booksRead[i]);
+            }
+
+
         }
-        */
+
     }
 }

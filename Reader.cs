@@ -34,6 +34,35 @@ namespace Biblioteka
             this.booksInHands = new List<string>();
             this.booksRead = new List<string>();
         }
+        public Reader(string file) //перегрузка: загружаем данные из указанного файла
+        {
+            string stroka;
+            using (FileStream fileStream = new FileStream(file, FileMode.Open))
+            {
+                StreamReader streamReader = new StreamReader(fileStream);
+                this.password = streamReader.ReadLine(); //первая строка это пароль
+                this.readersTicketNumber = Convert.ToInt32(streamReader.ReadLine()); //вторая сторка это id
+                this.login = streamReader.ReadLine(); //третья строка это логин
+                this.lastName = streamReader.ReadLine(); //четвертая  строка это фамилия
+                this.firstName = streamReader.ReadLine(); //пятая строка это имя
+                this.middleName = streamReader.ReadLine(); //шестая строка это отчетство
+                this.birthday = Convert.ToDateTime(streamReader.ReadLine()); //седьмая строка это др
+                this.tel = streamReader.ReadLine(); //восьмая строка это телефон
+                int kolvo = Convert.ToInt16(streamReader.ReadLine()); //девятая строка это кол-во книг на руках
+                this.booksInHands = new List<string>();
+                for (int i = 0; i < kolvo; i++) // строки с книгами на руках
+                {
+                    this.booksInHands.Add(streamReader.ReadLine());
+                }
+                kolvo = Convert.ToInt16(streamReader.ReadLine()); //потом строка это кол-во книг прочитанных
+                this.booksRead = new List<string>();
+                for (int i = 0; i < kolvo; i++) // строки с книгами прочитанными
+                {
+                    this.booksRead.Add(streamReader.ReadLine());
+                }
+                streamReader.Close();
+            }
+        }
         public void SaveInFile() //сохраняем читателя в файл
         {
             string file = "\\Readers\\" + this.login + ".txt";
@@ -46,7 +75,7 @@ namespace Biblioteka
                 streamWriter.WriteLine(this.readersTicketNumber);//вторая сторка это номер читательского               
                 streamWriter.WriteLine(this.login);//третья строка это логин
                 streamWriter.WriteLine(this.lastName);//четвертая  строка это фамилия
-                streamWriter.WriteLine(this.firstName);//пятая строка это фамилия
+                streamWriter.WriteLine(this.firstName);//пятая строка это имя
                 streamWriter.WriteLine(this.middleName);//шестая строка это отчетство
                 streamWriter.WriteLine(Convert.ToString(this.birthday));//седьмая строка это др
                 streamWriter.WriteLine(this.tel); //восьмая строка это телефон                
@@ -65,10 +94,102 @@ namespace Biblioteka
                 streamWriter.Close();
             }
         }
+        public void DeleteFileUser() //удаляет файл указанного читателя
+        {
+            string file = "\\Readers\\" + this.login + ".txt";
+            File.Delete(file);
+        }
+        //конструкции get - возращают данные о читателе
         public string GetFIO()
         {
             string FIO = this.lastName + " " + this.firstName + " " + this.middleName;
             return FIO;
         }
+
+        public int GetTicketNumber()//номер читательского билета;
+        {
+            return this.readersTicketNumber;
+        }
+        public string GetLogin()//login
+        {
+            return this.login;
+        }
+        public string GetPassword()//password
+        {
+            return this.password;
+        }
+        public string GetlastName()//фамилия, 
+        {
+            return this.lastName;
+        }
+        public string GetfirstName()//имя, 
+        {
+            return this.firstName;
+        }
+        public string GetMiddleName()//отчество, 
+        {
+            return this.middleName;
+        }        
+        public DateTime GetBirthday()//дата рождения;
+        {
+            return this.birthday;
+        }
+        public string GetTel()//номер телефона, 
+        {
+            return this.tel;
+        }
+
+        public List<string> GetbooksInHands()//список книг, которые в данный момент у читателя;
+        {
+            return this.booksInHands;
+        }
+        public List<string> GetbooksRead()//список книг, которые читатель вернул.
+        {
+            return this.booksRead;
+        }
+
+        //конструкции set - записывают данные о читателе
+        public void SetTicketNumber(int readersTicketNumber)//номер читательского билета;
+        {
+            this.readersTicketNumber= readersTicketNumber;
+        }
+        public void SetLogin(string login)//login
+        {
+            this.login = login;
+        }
+        public void SetPassword(string password)//password
+        {
+            this.password = password;
+        }
+        public void SetlastName(string lastName)//фамилия, 
+        {
+            this.lastName = lastName;
+        }
+        public void SetfirstName(string firstName)//имя, 
+        {
+            this.firstName = firstName;
+        }
+        public void SetMiddleName(string middleName)//отчество, 
+        {
+            this.middleName = middleName;
+        }
+        public void SetBirthday(DateTime birthday)//дата рождения;
+        {
+            this.birthday = birthday;
+        }
+        public void SetTel(string tel)//номер телефона, 
+        {
+            this.tel = tel;
+        }
+
+        public void SetTooksInHands(List<string> booksInHands)//список книг, которые в данный момент у читателя;
+        {
+            this.booksInHands = booksInHands;
+        }
+        public void SetbooksRead(List<string> booksRead)//список книг, которые читатель вернул.
+        {
+            this.booksRead = booksRead;
+        }
+
     }
 }
