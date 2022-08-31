@@ -622,6 +622,7 @@
             this.LBBookListLibrarian.Name = "LBBookListLibrarian";
             this.LBBookListLibrarian.Size = new System.Drawing.Size(323, 347);
             this.LBBookListLibrarian.TabIndex = 17;
+            this.LBBookListLibrarian.Click += new System.EventHandler(this.LBBookListLibrarian_Click);
             // 
             // groupBox4
             // 

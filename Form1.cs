@@ -143,16 +143,26 @@ namespace Biblioteka
                     ); //конструктор объекта книг ис введенными данными
             currentBook.SaveInFile(); // сохраняем в файл
             //обновляем список книг
+            UpdateBooks();
         }
 
         private void BEditBook_Click(object sender, EventArgs e)
         {
-            //Перезаписывает файл книгис новыми данными
+            //Перезаписывает файл книги с новыми данными
+            currentBook.setInfoBook(Convert.ToInt32(TBCodeBookLibrarian.Text),
+                    TBNameBookLibrarian.Text,
+                    TBAuthorBookLibrarian.Text,
+                    RTBCommentBookLibrarian.Text);
+            currentBook.SaveInFile(); // сохраняем в файл
+            //обновляем список книг
+            UpdateBooks();
         }
 
         private void BDelBook_Click(object sender, EventArgs e)
         {
             //Удаляет файл книги
+            currentBook.DeleteFileBook();
+            UpdateBooks();
         }
 
         private void BAddREader_Click(object sender, EventArgs e)
@@ -166,6 +176,7 @@ namespace Biblioteka
                 DTPLRBirthday.Value,
                 TBLRTelNum.Text);
             currentReader.SaveInFile();
+            UpdateReaders();
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -182,6 +193,7 @@ namespace Biblioteka
             currentReader.SetTel(TBLRTelNum.Text);
             
             currentReader.SaveInFile();
+            UpdateReaders();
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -227,9 +239,29 @@ namespace Biblioteka
             {
                 LBRedersBooksRetrieved.Items.Add(booksRead[i]);
             }
-
-
+        }
+        public void UpdateBooks()
+        {
+            //функция заполения списка читателей
+            string papka = "\\Books\\";
+            //https://docs.microsoft.com/ru-ru/dotnet/api/system.io.directory.getfiles?view=net-6.0 про список файлов
+            string[] fileEntries = Directory.GetFiles(papka);
+            foreach (string fileName in fileEntries)
+            {
+                LBBookListLibrarian.Items.Add(fileName);
+            }
         }
 
+        private void LBBookListLibrarian_Click(object sender, EventArgs e) //когда нажимаем на книгу в списке
+        {
+            String file = LBBookListLibrarian.SelectedItem.ToString(); // берем текст выбранного пункта
+            currentBook = new Book(file);                   //открываем файл
+
+            TBCodeBookLibrarian.Text = Convert.ToString(currentBook.GetbookCode());
+            TBStatusBookLibrarian.Text = currentBook.GetbookStatus();
+            TBNameBookLibrarian.Text = currentBook.GetbookName();
+            TBAuthorBookLibrarian.Text = currentBook.GetbookAuthor();
+            RTBCommentBookLibrarian.Text = currentBook.GetbookDescription();            
+        }
     }
 }
