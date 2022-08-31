@@ -146,7 +146,19 @@ namespace Biblioteka
         private void BOrderBookReader_Click(object sender, EventArgs e)
         {
             //Выводит сообщение о том что заполните поля, добавляет книгу с отметкой что ее нужно заказать
-            //если книга на руках, предлагает встать в очередь на нее 
+            //https://docs.microsoft.com/ru-ru/dotnet/api/system.windows.forms.messagebox?view=windowsdesktop-6.0 инструкция по всплывающему окну
+            DialogResult result = MessageBox.Show("Заказать книгу, данные которые введены?", "Внимание!", MessageBoxButtons.OKCancel); 
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                //создаем книгу
+                currentBook = new Book(Convert.ToInt16(TBCodeBookReader.Text),
+                    TBNameBookReader.Text,
+                    TBAuthorBookReader.Text,
+                    RTBCommentBookReader.Text
+                    );
+                currentBook.SaveInFileWaitingBook(); //сохраняем книгу для ожидания
+                // и как-то эту книгу ждем...
+            }
         }
 
         private void BRentBook_Click(object sender, EventArgs e)
@@ -269,10 +281,24 @@ namespace Biblioteka
         }
         public void UpdateBooks()
         {
-            //функция заполения списка читателей
+            //функция заполения списка книг
             string papka = "\\Books\\";
             //https://docs.microsoft.com/ru-ru/dotnet/api/system.io.directory.getfiles?view=net-6.0 про список файлов
             string[] fileEntries = Directory.GetFiles(papka);
+            LBBookListLibrarian.Items.Clear();
+            LBBookListReader.Items.Clear();
+            foreach (string fileName in fileEntries)
+            {
+                LBBookListLibrarian.Items.Add(fileName);
+                LBBookListReader.Items.Add(fileName);
+            }
+        }
+        public void UpdateBooks(string search) //перегрузка
+        {
+            //функция заполения списка книг
+            string papka = "\\Books\\";
+            //https://docs.microsoft.com/ru-ru/dotnet/api/system.io.directory.getfiles?view=net-6.0 про список файлов
+            string[] fileEntries = Directory.GetFiles(papka, search);
             LBBookListLibrarian.Items.Clear();
             LBBookListReader.Items.Clear();
             foreach (string fileName in fileEntries)
@@ -305,6 +331,19 @@ namespace Biblioteka
             TBAuthorBookReader.Text = currentBook.GetbookAuthor();
             RTBCommentBookReader.Text = currentBook.GetbookDescription();
 
+        }
+
+        private void BBookSearchReader_Click(object sender, EventArgs e)
+        {
+            string SearchText = "*" + TBBookSearchReader.Text + "*"; //звездочки нужны, что бы искалось, даже если название введено частично  
+            UpdateBooks(SearchText);
+        }
+
+        private void BSearchBookLibrarian_Click(object sender, EventArgs e)
+        {
+            
+            string SearchText = "*" + TBSearchBookLibrarian.Text + "*"; //звездочки нужны, что бы искалось, даже если название введено частично  
+            UpdateBooks(SearchText);
         }
     }
 }

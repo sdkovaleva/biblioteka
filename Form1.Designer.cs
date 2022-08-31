@@ -60,6 +60,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.LBBookListReader = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.BBookSearchReader = new System.Windows.Forms.Button();
             this.TBBookSearchReader = new System.Windows.Forms.TextBox();
             this.BPickBookReader = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
@@ -120,6 +121,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.BAddREader = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.BSearchBookLibrarian = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.TPLogin.SuspendLayout();
             this.TPRegister.SuspendLayout();
@@ -458,6 +460,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.BBookSearchReader);
             this.groupBox2.Controls.Add(this.TBBookSearchReader);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(3, 19);
@@ -467,12 +470,21 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Поиск";
             // 
+            // BBookSearchReader
+            // 
+            this.BBookSearchReader.Location = new System.Drawing.Point(310, 19);
+            this.BBookSearchReader.Name = "BBookSearchReader";
+            this.BBookSearchReader.Size = new System.Drawing.Size(75, 23);
+            this.BBookSearchReader.TabIndex = 17;
+            this.BBookSearchReader.Text = "Искать";
+            this.BBookSearchReader.UseVisualStyleBackColor = true;
+            this.BBookSearchReader.Click += new System.EventHandler(this.BBookSearchReader_Click);
+            // 
             // TBBookSearchReader
             // 
-            this.TBBookSearchReader.Dock = System.Windows.Forms.DockStyle.Top;
             this.TBBookSearchReader.Location = new System.Drawing.Point(3, 19);
             this.TBBookSearchReader.Name = "TBBookSearchReader";
-            this.TBBookSearchReader.Size = new System.Drawing.Size(385, 23);
+            this.TBBookSearchReader.Size = new System.Drawing.Size(300, 23);
             this.TBBookSearchReader.TabIndex = 16;
             // 
             // BPickBookReader
@@ -627,6 +639,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.BSearchBookLibrarian);
             this.groupBox4.Controls.Add(this.TBSearchBookLibrarian);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox4.Location = new System.Drawing.Point(3, 19);
@@ -638,10 +651,9 @@
             // 
             // TBSearchBookLibrarian
             // 
-            this.TBSearchBookLibrarian.Dock = System.Windows.Forms.DockStyle.Top;
             this.TBSearchBookLibrarian.Location = new System.Drawing.Point(3, 19);
             this.TBSearchBookLibrarian.Name = "TBSearchBookLibrarian";
-            this.TBSearchBookLibrarian.Size = new System.Drawing.Size(317, 23);
+            this.TBSearchBookLibrarian.Size = new System.Drawing.Size(243, 23);
             this.TBSearchBookLibrarian.TabIndex = 16;
             // 
             // BReturnBook
@@ -1035,6 +1047,16 @@
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
+            // BSearchBookLibrarian
+            // 
+            this.BSearchBookLibrarian.Location = new System.Drawing.Point(248, 19);
+            this.BSearchBookLibrarian.Name = "BSearchBookLibrarian";
+            this.BSearchBookLibrarian.Size = new System.Drawing.Size(75, 23);
+            this.BSearchBookLibrarian.TabIndex = 18;
+            this.BSearchBookLibrarian.Text = "Искать";
+            this.BSearchBookLibrarian.UseVisualStyleBackColor = true;
+            this.BSearchBookLibrarian.Click += new System.EventHandler(this.BSearchBookLibrarian_Click);
+            // 
             // FLibrary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1161,5 +1183,7 @@
         private Label label28;
         private RadioButton RBRegLibrarian;
         private RadioButton RBRegReader;
+        private Button BBookSearchReader;
+        private Button BSearchBookLibrarian;
     }
 }
