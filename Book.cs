@@ -110,6 +110,10 @@ namespace Biblioteka
                 return "В библиотеке";
             }
         }
+        public void SetReder(string bookCurrentReader)
+        {
+            this.bookCurrentReader = bookCurrentReader; 
+        }
 
     }
 }

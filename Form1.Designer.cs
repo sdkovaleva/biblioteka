@@ -454,6 +454,7 @@
             this.LBBookListReader.Name = "LBBookListReader";
             this.LBBookListReader.Size = new System.Drawing.Size(391, 347);
             this.LBBookListReader.TabIndex = 17;
+            this.LBBookListReader.Click += new System.EventHandler(this.LBBookListReader_Click);
             // 
             // groupBox2
             // 

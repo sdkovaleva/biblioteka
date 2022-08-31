@@ -190,6 +190,11 @@ namespace Biblioteka
         {
             this.booksRead = booksRead;
         }
+        public void AddBookInHands(string bookRead)//список книг, которые читатель вернул.
+        {
+            this.booksRead.Add(bookRead);
+        }
+
 
     }
 }

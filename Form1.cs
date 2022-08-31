@@ -44,6 +44,7 @@ namespace Biblioteka
         {
             InitializeComponent();
             UpdateReaders();
+            UpdateBooks();
         }
 
         private void BLogin_Click(object sender, EventArgs e)
@@ -107,6 +108,17 @@ namespace Biblioteka
 
             }
             else papka = "\\Readers\\";
+            {
+                currentReader = new Reader(TBRegLogin.Text,
+                    TBRegPassword.Text,
+                    TBRegLastName.Text,
+                    TBRegName.Text,
+                    TBRegMidName.Text,
+                    DTPRegBirthday.Value,
+                    TBRegTelNum.Text
+                    );
+                currentReader.SaveInFile(); 
+            }
 
 
         }
@@ -114,6 +126,10 @@ namespace Biblioteka
         private void BPickBookReader_Click(object sender, EventArgs e)
         {
             // нопка вз€ти€ книги. ѕрисваевает выбранной книге что ее вз€л читатель, а читателю добавл€ет книгу в список
+            currentBook.SetReder(currentReader.GetFIO());
+            currentReader.AddBookInHands(currentBook.GetbookName() + " " + currentBook.GetbookAuthor());
+            currentReader.SaveInFile();
+            currentBook.SaveInFile();
         }
 
         private void BOrderBookReader_Click(object sender, EventArgs e)
@@ -246,9 +262,12 @@ namespace Biblioteka
             string papka = "\\Books\\";
             //https://docs.microsoft.com/ru-ru/dotnet/api/system.io.directory.getfiles?view=net-6.0 про список файлов
             string[] fileEntries = Directory.GetFiles(papka);
+            LBBookListLibrarian.Items.Clear();
+            LBBookListReader.Items.Clear();
             foreach (string fileName in fileEntries)
             {
                 LBBookListLibrarian.Items.Add(fileName);
+                LBBookListReader.Items.Add(fileName);
             }
         }
 
@@ -261,7 +280,20 @@ namespace Biblioteka
             TBStatusBookLibrarian.Text = currentBook.GetbookStatus();
             TBNameBookLibrarian.Text = currentBook.GetbookName();
             TBAuthorBookLibrarian.Text = currentBook.GetbookAuthor();
-            RTBCommentBookLibrarian.Text = currentBook.GetbookDescription();            
+            RTBCommentBookLibrarian.Text = currentBook.GetbookDescription();
+        }
+
+        private void LBBookListReader_Click(object sender, EventArgs e)//когда нажимаем на книгу в списке
+        {
+            String file = LBBookListReader.SelectedItem.ToString(); // берем текст выбранного пункта
+            currentBook = new Book(file); 
+            //открываем файл
+            TBCodeBookReader.Text = Convert.ToString(currentBook.GetbookCode());
+            TBStatusBookReader.Text = currentBook.GetbookStatus();
+            TBNameBookReader.Text = currentBook.GetbookName();
+            TBAuthorBookReader.Text = currentBook.GetbookAuthor();
+            RTBCommentBookReader.Text = currentBook.GetbookDescription();
+
         }
     }
 }
