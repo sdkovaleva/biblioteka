@@ -68,25 +68,36 @@ namespace Biblioteka
                         if (RBLoginLibrarian.Checked) Authorization(true, file); // входим как сотрудник
                         else Authorization(false, file); // входим как читатель
                     }
+                    else MessageBox.Show("Неправильный пароль!", "Ошибка", MessageBoxButtons.OK); //https://docs.microsoft.com/ru-ru/dotnet/api/system.windows.forms.messagebox?view=windowsdesktop-6.0
 
                 }
             }
-            else { }//всплывающее окно, что такой пользователь не найден 
+            else { MessageBox.Show("Пользователь не найден !", "Ошибка", MessageBoxButtons.OK); }//всплывающее окно, что такой пользователь не найден 
 
         }
 
         private void Authorization(bool Librarian, String file)
         {
+            //Удаляем вкладки, что бы остался только интерфейс для конкретного пользоватлея 
+            //https://www.cyberforum.ru/vb-net/thread1410072.html
+            tabControl1.TabPages.Remove(TPLogin);
+            tabControl1.TabPages.Remove(TPRegister);
             if (Librarian)
             {
                 //здесь нужно удалять вкладки читателя, но непонятно как
                 //загружаем данные сотрудника
                 currentLibrarian = new Librarian(file);
-                this.Text = "Библиотека: сотрудник " + currentLibrarian.GetFIO();
+                this.Text = "Библиотека: сотрудник " + currentLibrarian.GetFIO();                
+                tabControl1.TabPages.Remove(TPListBook);
             }
             else
             {
+                currentReader = new Reader(file);
+                this.Text = "Библиотека: читатель " + currentReader.GetFIO();
                 //здесь нужно удалять вкладки сотрудника
+                tabControl1.TabPages.Remove(TPBookWork);
+                tabControl1.TabPages.Remove(TPReaderWork);
+                
             }
 
         }

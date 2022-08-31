@@ -37,7 +37,7 @@
             this.TBLogin = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.TRegister = new System.Windows.Forms.TabPage();
+            this.TPRegister = new System.Windows.Forms.TabPage();
             this.RBRegLibrarian = new System.Windows.Forms.RadioButton();
             this.RBRegReader = new System.Windows.Forms.RadioButton();
             this.BRegister = new System.Windows.Forms.Button();
@@ -55,7 +55,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.TListBook = new System.Windows.Forms.TabPage();
+            this.TPListBook = new System.Windows.Forms.TabPage();
             this.BOrderBookReader = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.LBBookListReader = new System.Windows.Forms.ListBox();
@@ -72,7 +72,7 @@
             this.TBAuthorBookReader = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.TBNameBookReader = new System.Windows.Forms.TextBox();
-            this.TBookWork = new System.Windows.Forms.TabPage();
+            this.TPBookWork = new System.Windows.Forms.TabPage();
             this.BRentBook = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.LBBookListLibrarian = new System.Windows.Forms.ListBox();
@@ -92,7 +92,7 @@
             this.TBAuthorBookLibrarian = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.TBNameBookLibrarian = new System.Windows.Forms.TextBox();
-            this.TReaderWork = new System.Windows.Forms.TabPage();
+            this.TPReaderWork = new System.Windows.Forms.TabPage();
             this.label29 = new System.Windows.Forms.Label();
             this.LBRedersBooksRetrieved = new System.Windows.Forms.ListBox();
             this.TBReaderTicket = new System.Windows.Forms.TextBox();
@@ -122,14 +122,14 @@
             this.button10 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.TPLogin.SuspendLayout();
-            this.TRegister.SuspendLayout();
-            this.TListBook.SuspendLayout();
+            this.TPRegister.SuspendLayout();
+            this.TPListBook.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.TBookWork.SuspendLayout();
+            this.TPBookWork.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.TReaderWork.SuspendLayout();
+            this.TPReaderWork.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.SuspendLayout();
@@ -137,10 +137,10 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.TPLogin);
-            this.tabControl1.Controls.Add(this.TRegister);
-            this.tabControl1.Controls.Add(this.TListBook);
-            this.tabControl1.Controls.Add(this.TBookWork);
-            this.tabControl1.Controls.Add(this.TReaderWork);
+            this.tabControl1.Controls.Add(this.TPRegister);
+            this.tabControl1.Controls.Add(this.TPListBook);
+            this.tabControl1.Controls.Add(this.TPBookWork);
+            this.tabControl1.Controls.Add(this.TPReaderWork);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -229,32 +229,32 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Логин";
             // 
-            // TRegister
+            // TPRegister
             // 
-            this.TRegister.Controls.Add(this.RBRegLibrarian);
-            this.TRegister.Controls.Add(this.RBRegReader);
-            this.TRegister.Controls.Add(this.BRegister);
-            this.TRegister.Controls.Add(this.DTPRegBirthday);
-            this.TRegister.Controls.Add(this.TBRegTelNum);
-            this.TRegister.Controls.Add(this.label9);
-            this.TRegister.Controls.Add(this.label8);
-            this.TRegister.Controls.Add(this.TBRegMidName);
-            this.TRegister.Controls.Add(this.TBRegLastName);
-            this.TRegister.Controls.Add(this.TBRegName);
-            this.TRegister.Controls.Add(this.TBRegPassword);
-            this.TRegister.Controls.Add(this.TBRegLogin);
-            this.TRegister.Controls.Add(this.label7);
-            this.TRegister.Controls.Add(this.label6);
-            this.TRegister.Controls.Add(this.label5);
-            this.TRegister.Controls.Add(this.label4);
-            this.TRegister.Controls.Add(this.label3);
-            this.TRegister.Location = new System.Drawing.Point(4, 24);
-            this.TRegister.Name = "TRegister";
-            this.TRegister.Padding = new System.Windows.Forms.Padding(3);
-            this.TRegister.Size = new System.Drawing.Size(792, 422);
-            this.TRegister.TabIndex = 1;
-            this.TRegister.Text = "Регистрация";
-            this.TRegister.UseVisualStyleBackColor = true;
+            this.TPRegister.Controls.Add(this.RBRegLibrarian);
+            this.TPRegister.Controls.Add(this.RBRegReader);
+            this.TPRegister.Controls.Add(this.BRegister);
+            this.TPRegister.Controls.Add(this.DTPRegBirthday);
+            this.TPRegister.Controls.Add(this.TBRegTelNum);
+            this.TPRegister.Controls.Add(this.label9);
+            this.TPRegister.Controls.Add(this.label8);
+            this.TPRegister.Controls.Add(this.TBRegMidName);
+            this.TPRegister.Controls.Add(this.TBRegLastName);
+            this.TPRegister.Controls.Add(this.TBRegName);
+            this.TPRegister.Controls.Add(this.TBRegPassword);
+            this.TPRegister.Controls.Add(this.TBRegLogin);
+            this.TPRegister.Controls.Add(this.label7);
+            this.TPRegister.Controls.Add(this.label6);
+            this.TPRegister.Controls.Add(this.label5);
+            this.TPRegister.Controls.Add(this.label4);
+            this.TPRegister.Controls.Add(this.label3);
+            this.TPRegister.Location = new System.Drawing.Point(4, 24);
+            this.TPRegister.Name = "TPRegister";
+            this.TPRegister.Padding = new System.Windows.Forms.Padding(3);
+            this.TPRegister.Size = new System.Drawing.Size(792, 422);
+            this.TPRegister.TabIndex = 1;
+            this.TPRegister.Text = "Регистрация";
+            this.TPRegister.UseVisualStyleBackColor = true;
             // 
             // RBRegLibrarian
             // 
@@ -400,28 +400,28 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Логин";
             // 
-            // TListBook
+            // TPListBook
             // 
-            this.TListBook.Controls.Add(this.BOrderBookReader);
-            this.TListBook.Controls.Add(this.groupBox1);
-            this.TListBook.Controls.Add(this.BPickBookReader);
-            this.TListBook.Controls.Add(this.label14);
-            this.TListBook.Controls.Add(this.TBCodeBookReader);
-            this.TListBook.Controls.Add(this.label13);
-            this.TListBook.Controls.Add(this.TBStatusBookReader);
-            this.TListBook.Controls.Add(this.RTBCommentBookReader);
-            this.TListBook.Controls.Add(this.label12);
-            this.TListBook.Controls.Add(this.label11);
-            this.TListBook.Controls.Add(this.TBAuthorBookReader);
-            this.TListBook.Controls.Add(this.label10);
-            this.TListBook.Controls.Add(this.TBNameBookReader);
-            this.TListBook.Location = new System.Drawing.Point(4, 24);
-            this.TListBook.Name = "TListBook";
-            this.TListBook.Padding = new System.Windows.Forms.Padding(3);
-            this.TListBook.Size = new System.Drawing.Size(792, 422);
-            this.TListBook.TabIndex = 2;
-            this.TListBook.Text = "Список книг";
-            this.TListBook.UseVisualStyleBackColor = true;
+            this.TPListBook.Controls.Add(this.BOrderBookReader);
+            this.TPListBook.Controls.Add(this.groupBox1);
+            this.TPListBook.Controls.Add(this.BPickBookReader);
+            this.TPListBook.Controls.Add(this.label14);
+            this.TPListBook.Controls.Add(this.TBCodeBookReader);
+            this.TPListBook.Controls.Add(this.label13);
+            this.TPListBook.Controls.Add(this.TBStatusBookReader);
+            this.TPListBook.Controls.Add(this.RTBCommentBookReader);
+            this.TPListBook.Controls.Add(this.label12);
+            this.TPListBook.Controls.Add(this.label11);
+            this.TPListBook.Controls.Add(this.TBAuthorBookReader);
+            this.TPListBook.Controls.Add(this.label10);
+            this.TPListBook.Controls.Add(this.TBNameBookReader);
+            this.TPListBook.Location = new System.Drawing.Point(4, 24);
+            this.TPListBook.Name = "TPListBook";
+            this.TPListBook.Padding = new System.Windows.Forms.Padding(3);
+            this.TPListBook.Size = new System.Drawing.Size(792, 422);
+            this.TPListBook.TabIndex = 2;
+            this.TPListBook.Text = "Список книг";
+            this.TPListBook.UseVisualStyleBackColor = true;
             // 
             // BOrderBookReader
             // 
@@ -566,31 +566,31 @@
             this.TBNameBookReader.Size = new System.Drawing.Size(313, 23);
             this.TBNameBookReader.TabIndex = 1;
             // 
-            // TBookWork
+            // TPBookWork
             // 
-            this.TBookWork.Controls.Add(this.BRentBook);
-            this.TBookWork.Controls.Add(this.groupBox3);
-            this.TBookWork.Controls.Add(this.BReturnBook);
-            this.TBookWork.Controls.Add(this.BDelBook);
-            this.TBookWork.Controls.Add(this.BAddBook);
-            this.TBookWork.Controls.Add(this.BEditBook);
-            this.TBookWork.Controls.Add(this.label15);
-            this.TBookWork.Controls.Add(this.TBCodeBookLibrarian);
-            this.TBookWork.Controls.Add(this.label16);
-            this.TBookWork.Controls.Add(this.TBStatusBookLibrarian);
-            this.TBookWork.Controls.Add(this.RTBCommentBookLibrarian);
-            this.TBookWork.Controls.Add(this.label17);
-            this.TBookWork.Controls.Add(this.label18);
-            this.TBookWork.Controls.Add(this.TBAuthorBookLibrarian);
-            this.TBookWork.Controls.Add(this.label19);
-            this.TBookWork.Controls.Add(this.TBNameBookLibrarian);
-            this.TBookWork.Location = new System.Drawing.Point(4, 24);
-            this.TBookWork.Name = "TBookWork";
-            this.TBookWork.Padding = new System.Windows.Forms.Padding(3);
-            this.TBookWork.Size = new System.Drawing.Size(792, 422);
-            this.TBookWork.TabIndex = 3;
-            this.TBookWork.Text = "Работа с книгами";
-            this.TBookWork.UseVisualStyleBackColor = true;
+            this.TPBookWork.Controls.Add(this.BRentBook);
+            this.TPBookWork.Controls.Add(this.groupBox3);
+            this.TPBookWork.Controls.Add(this.BReturnBook);
+            this.TPBookWork.Controls.Add(this.BDelBook);
+            this.TPBookWork.Controls.Add(this.BAddBook);
+            this.TPBookWork.Controls.Add(this.BEditBook);
+            this.TPBookWork.Controls.Add(this.label15);
+            this.TPBookWork.Controls.Add(this.TBCodeBookLibrarian);
+            this.TPBookWork.Controls.Add(this.label16);
+            this.TPBookWork.Controls.Add(this.TBStatusBookLibrarian);
+            this.TPBookWork.Controls.Add(this.RTBCommentBookLibrarian);
+            this.TPBookWork.Controls.Add(this.label17);
+            this.TPBookWork.Controls.Add(this.label18);
+            this.TPBookWork.Controls.Add(this.TBAuthorBookLibrarian);
+            this.TPBookWork.Controls.Add(this.label19);
+            this.TPBookWork.Controls.Add(this.TBNameBookLibrarian);
+            this.TPBookWork.Location = new System.Drawing.Point(4, 24);
+            this.TPBookWork.Name = "TPBookWork";
+            this.TPBookWork.Padding = new System.Windows.Forms.Padding(3);
+            this.TPBookWork.Size = new System.Drawing.Size(792, 422);
+            this.TPBookWork.TabIndex = 3;
+            this.TPBookWork.Text = "Работа с книгами";
+            this.TPBookWork.UseVisualStyleBackColor = true;
             // 
             // BRentBook
             // 
@@ -765,39 +765,39 @@
             this.TBNameBookLibrarian.Size = new System.Drawing.Size(264, 23);
             this.TBNameBookLibrarian.TabIndex = 14;
             // 
-            // TReaderWork
+            // TPReaderWork
             // 
-            this.TReaderWork.Controls.Add(this.label29);
-            this.TReaderWork.Controls.Add(this.LBRedersBooksRetrieved);
-            this.TReaderWork.Controls.Add(this.TBReaderTicket);
-            this.TReaderWork.Controls.Add(this.label28);
-            this.TReaderWork.Controls.Add(this.label27);
-            this.TReaderWork.Controls.Add(this.LBRedersBooks);
-            this.TReaderWork.Controls.Add(this.DTPLRBirthday);
-            this.TReaderWork.Controls.Add(this.TBLRTelNum);
-            this.TReaderWork.Controls.Add(this.label20);
-            this.TReaderWork.Controls.Add(this.label21);
-            this.TReaderWork.Controls.Add(this.TBLRMidName);
-            this.TReaderWork.Controls.Add(this.TBLRLastName);
-            this.TReaderWork.Controls.Add(this.TBLRName);
-            this.TReaderWork.Controls.Add(this.TBLRPassword);
-            this.TReaderWork.Controls.Add(this.TBLRLogin);
-            this.TReaderWork.Controls.Add(this.label22);
-            this.TReaderWork.Controls.Add(this.label23);
-            this.TReaderWork.Controls.Add(this.label24);
-            this.TReaderWork.Controls.Add(this.label25);
-            this.TReaderWork.Controls.Add(this.label26);
-            this.TReaderWork.Controls.Add(this.groupBox5);
-            this.TReaderWork.Controls.Add(this.button8);
-            this.TReaderWork.Controls.Add(this.BAddREader);
-            this.TReaderWork.Controls.Add(this.button10);
-            this.TReaderWork.Location = new System.Drawing.Point(4, 24);
-            this.TReaderWork.Name = "TReaderWork";
-            this.TReaderWork.Padding = new System.Windows.Forms.Padding(3);
-            this.TReaderWork.Size = new System.Drawing.Size(792, 422);
-            this.TReaderWork.TabIndex = 4;
-            this.TReaderWork.Text = "Работа с читателями";
-            this.TReaderWork.UseVisualStyleBackColor = true;
+            this.TPReaderWork.Controls.Add(this.label29);
+            this.TPReaderWork.Controls.Add(this.LBRedersBooksRetrieved);
+            this.TPReaderWork.Controls.Add(this.TBReaderTicket);
+            this.TPReaderWork.Controls.Add(this.label28);
+            this.TPReaderWork.Controls.Add(this.label27);
+            this.TPReaderWork.Controls.Add(this.LBRedersBooks);
+            this.TPReaderWork.Controls.Add(this.DTPLRBirthday);
+            this.TPReaderWork.Controls.Add(this.TBLRTelNum);
+            this.TPReaderWork.Controls.Add(this.label20);
+            this.TPReaderWork.Controls.Add(this.label21);
+            this.TPReaderWork.Controls.Add(this.TBLRMidName);
+            this.TPReaderWork.Controls.Add(this.TBLRLastName);
+            this.TPReaderWork.Controls.Add(this.TBLRName);
+            this.TPReaderWork.Controls.Add(this.TBLRPassword);
+            this.TPReaderWork.Controls.Add(this.TBLRLogin);
+            this.TPReaderWork.Controls.Add(this.label22);
+            this.TPReaderWork.Controls.Add(this.label23);
+            this.TPReaderWork.Controls.Add(this.label24);
+            this.TPReaderWork.Controls.Add(this.label25);
+            this.TPReaderWork.Controls.Add(this.label26);
+            this.TPReaderWork.Controls.Add(this.groupBox5);
+            this.TPReaderWork.Controls.Add(this.button8);
+            this.TPReaderWork.Controls.Add(this.BAddREader);
+            this.TPReaderWork.Controls.Add(this.button10);
+            this.TPReaderWork.Location = new System.Drawing.Point(4, 24);
+            this.TPReaderWork.Name = "TPReaderWork";
+            this.TPReaderWork.Padding = new System.Windows.Forms.Padding(3);
+            this.TPReaderWork.Size = new System.Drawing.Size(792, 422);
+            this.TPReaderWork.TabIndex = 4;
+            this.TPReaderWork.Text = "Работа с читателями";
+            this.TPReaderWork.UseVisualStyleBackColor = true;
             // 
             // label29
             // 
@@ -1046,20 +1046,20 @@
             this.tabControl1.ResumeLayout(false);
             this.TPLogin.ResumeLayout(false);
             this.TPLogin.PerformLayout();
-            this.TRegister.ResumeLayout(false);
-            this.TRegister.PerformLayout();
-            this.TListBook.ResumeLayout(false);
-            this.TListBook.PerformLayout();
+            this.TPRegister.ResumeLayout(false);
+            this.TPRegister.PerformLayout();
+            this.TPListBook.ResumeLayout(false);
+            this.TPListBook.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.TBookWork.ResumeLayout(false);
-            this.TBookWork.PerformLayout();
+            this.TPBookWork.ResumeLayout(false);
+            this.TPBookWork.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.TReaderWork.ResumeLayout(false);
-            this.TReaderWork.PerformLayout();
+            this.TPReaderWork.ResumeLayout(false);
+            this.TPReaderWork.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
@@ -1071,7 +1071,7 @@
 
         private TabControl tabControl1;
         private TabPage TPLogin;
-        private TabPage TRegister;
+        private TabPage TPRegister;
         private RadioButton RBLoginLibrarian;
         private RadioButton RBLoginReader;
         private TextBox TBPassword;
@@ -1093,7 +1093,7 @@
         private TextBox TBRegName;
         private TextBox TBRegPassword;
         private TextBox TBRegLogin;
-        private TabPage TListBook;
+        private TabPage TPListBook;
         private Button BPickBookReader;
         private Label label14;
         private TextBox TBCodeBookReader;
@@ -1105,7 +1105,7 @@
         private TextBox TBAuthorBookReader;
         private Label label10;
         private TextBox TBNameBookReader;
-        private TabPage TBookWork;
+        private TabPage TPBookWork;
         private Button BReturnBook;
         private Button BDelBook;
         private Button BAddBook;
@@ -1130,7 +1130,7 @@
         private GroupBox groupBox4;
         private TextBox TBSearchBookLibrarian;
         private Button BRegister;
-        private TabPage TReaderWork;
+        private TabPage TPReaderWork;
         private GroupBox groupBox5;
         private ListBox LBReaderList;
         private GroupBox groupBox6;
